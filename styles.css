@@ -1,8 +1,21 @@
 @import url('https://use.typekit.net/avc8jcz.css');
 
-/* Example usage of the imported font */
-body {
+@font-face {
+    font-family: 'SF Pro Text Regular';
+    src: url('data/SF-Pro-Text-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PIxel Icons';
+    src: url('data/Pixel Icons Compilation.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
     font-family: "pf-pixelscript", sans-serif;
     font-weight: 400;
     font-style: normal;
-}```
+}
