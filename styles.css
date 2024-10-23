@@ -8,14 +8,95 @@
 }
 
 @font-face {
-    font-family: 'PIxel Icons';
+    font-family: 'Pixel Icons';
     src: url('data/Pixel Icons Compilation.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* Title */
 h1 {
+    font-family: "pf-pixelscript", sans-serif;
+    font-weight: 400;;
+    font-style: normal;
+    font-size: 96px;
+    color: black;
+    margin-top: 12px; 
+    margin-left: 36px;
+    margin-bottom: 0;;
+}
+
+/* Sub-Titles */
+h2 {
     font-family: "pf-pixelscript", sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 48px;
+    color: black;
+    margin-left: 36px;
+}
+
+/* Paragraphs */
+p {
+    font-family: "SF Pro Text Regular", sans-serif;
+    font-size: "21px";
+    color: black;
+    line-height: 25px;
+    margin-left: 36px;
+    margin-top: 0;
+}
+
+/* Captions */
+.caption {
+    font-size: 12px;
+    color: #383838;
+    font-family: "SF Pro Text Regular", sans-serif;
+    margin-top: 5px;
+}
+
+/* Code Block */
+pre, code {
+    font-family: 'Courier New', monospace;  /* Monospaced font for readability */
+    background-color: #2d2d2d;              /* Dark background for code block */
+    color: #f8f8f2;                         /* Light text color */
+    padding: 15px;                          /* Padding inside the block */
+    border-radius: 8px;                     /* Rounded corners */
+    overflow-x: auto;                       /* Horizontal scrolling for long lines */
+    line-height: 1.5;                       /* Spacing between lines for readability */
+    font-size: 14px;                        /* Font size */
+    margin-bottom: 20px;                    /* Space below the block */
+    border: 1px solid #444;                 /* Optional border for more definition */
+}
+
+
+/* Basic list styling */
+ul {
+    list-style-type: disc;  /* Default bullet style (disc, circle, or square) */
+    margin-left: 20px;      /* Indent the list */
+    padding-left: 20px;     /* Padding for the items */
+    font-size: 16px;        /* Customize the font size */
+    color: #333;            /* Set the text color */
+}
+
+li {
+    margin-bottom: 10px;    /* Space between list items */
+}
+
+/* Optional: Customize bullet points */
+ul.custom-bullets {
+    list-style-type: none; /* Remove default bullets */
+}
+
+ul.custom-bullets li {
+    position: relative;
+    padding-left: 25px;     /* Space for custom bullet */
+}
+
+ul.custom-bullets li:before {
+    content: "•";            /* Custom bullet character */
+    color: #d63384;          /* Bullet color */
+    font-size: 20px;         /* Bullet size */
+    position: absolute;
+    left: 0;
+    top: 0;
 }
