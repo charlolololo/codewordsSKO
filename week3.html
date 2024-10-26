@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Week 3</h1>
+
+    <p style="margin-top: -12px;">
+        After working on on HTML and CSS for the past few weeks, we were introduced to Javascript,<br>
+        mainly working with P5.js, to provide interactivity to our designs.
+    </p>
+
+    <h2 style="margin-top: 24px;">
+        Reading Machines
+    </h2>
+
+    <div class="element1">
+    <p>
+        In the first half of the session, we looked at a few examples of creative coding for concrete poetry for more inspiration.
+        <br><br>
+        From Angelo Plessas' body of works, we had to choose one work of his that we liked. 
+        I chose <a href="https://www.everythinghappensasitshould.com" target="_blank">Everything Happens As It Should</a>.
+        <br><br>
+        I initially clicked into it because the title of the website was intriguing. The website's combination of animation, interactivity and<br>
+        sound evoked some nostalgia in me, even though I did not understand the entire concept of this website. Due to the emotional<br>
+        connection I felt with this design, I chose it as inspiration if I ever decided to create something similar.
+        <br><br>
+        Some other works shown in class that I was inspired by includes Yoko Ono's “Painting to Enlarge and See”, the Reading Machines<br>
+        website as well as Age of Earthquakes by Douglas Coupland.
+    </p>
+
+    <figure>
+        <img src="data/images/Week3/Week 3_1.png" alt="Week 3_1" style="width: 40vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+    </div>
+
+    <h2 style="margin-top: 24px;">
+        Machine Instructions
+    </h2>
+    
+    <div class="element1">
+    <div>
+    <p>
+        Coding is keying in specific instructions for a machine that has no prior knowledge other than what is already given to it.<br>
+        Thus, to show this in practice as well as teach us to be specific in our instructions, we had a machine instructions practice.<br>
+        Each of us drew out a simple image, wrote out instructions on how to recreate said image, and passed the instructions to<br>
+        someone else for them to figure out the drawing only with text-based instructions. 
+    </p>
+    <br>
+    <p>My instructions for a matcha bowl and whisk:</p>
+    <br>
+    <ol>
+        <li>Draw a rectangle vertically</li>
+        <li>Draw lines out from the bottom of the rectangle in the shape of a triangle</li>
+        <li>Draw an oval around the bottom half of the lines</li>
+        <li>Draw a curve that connects one end of the oval to the other from the bottom</li>
+        <li>Colour in the bottom of the lines</li>
+    </ol>
+    <br>
+    <p>I exchanged my instructions with Peran's:</p>
+        <br>
+            <ol>
+                <li>Draw 2 circles, the same size, that are horizontally separated by 2 circle distance</li>
+                <li>Draw a rectangle thats bottom aligns with the middle of the two circles and overlaps.<br>
+                    The width of the rectangle is slightly wider than the distance between the 2 circles</li>
+                <li>Complete the drawing by drawing a smaller rectangle that aligns with the right of the big rectangle.<br>
+                    Half the height of the big rectangle.</li>
+            </ol>
+    <br>
+    <p>
+        We were supposed to follow the instructions exactly, instead of trying to figure out it out using our own guesses.<br>
+        However, as humans, both Peran and I did try to guess what the other party was trying to give instructions on.<br>
+        His instructions were so much more detailed than mine, and I could recreate his design exactly even without<br>
+        trying to guess what it was, as seen in the image. On the other hand, he had a hard time with mine, and even<br>
+        assuming it was a pen with a cup. This exercise was helpful in showing me that I had to be more specific in<br>
+        my instructions. I assumed that my instructions were clear enough, but it was only due to the bias I had in<br>
+        my head, knowing what I wanted to draw. If it is already so difficult for a human to recreate my instructions,<br>
+        what more can I expect from a machine?
+    </p>
+    </div>
+
+    <div>
+        <figure>
+            <img src="data/images/Week3/Week3_2.JPG" alt="Week 3_2" style="width: 40vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 24px;">
+        Introduction to p5.js
+    </h2>
+
+    <pre style="margin-left: 36px; margin-right: 36px;"><code>
+    Some class notes regarding p5.js
+        - z height = arrangement/layering
+        - command / > stops the the line in processing for you
+        - pmouse x & pmouse y = previous mouse x & y
+        - everything is done in order
+        - z-axis happens in the order that you write the lines of code
+    </code></pre>
+
+    <p style="margin-top: 36px">
+        Before today's class, I was still rather confused on why we needed to learn HTML, CSS and Javascript<br>
+        all for one website. Today, I learnt that JS is generally better with providing interactivity, while HTML<br>
+        with the overall styling. I think I will understand it better as I code up my final project, but right now I<br>
+        have not seen much use for HTML as it feels as though we can create anything using the p5.JS library.
+    </p>
+
+
+    </div>
+
+    <div class="element1" style="margin-top: 24px;">
+    <figure style="display: block;">
+        <video width="900px" height="auto" controls muted style="display: block; margin: 0 auto;">
+            <source src="data/images/Week3/Week3_3.mp4" alt="Week 3_3" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figcaption class="caption" style="text-align: left; width: 900px; margin: 10px auto 0;">Caption for the video</figcaption>
+    </figure>
+
+    <figure style="display: block;">
+        <video width="900px" height="auto" controls muted style="display: block; margin: 0 auto;">
+            <source src="data/images/Week3/Week3_4.mp4" alt="Week 3_4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figcaption class="caption" style="text-align: left; width: 900px; margin: 10px auto 0;">Caption for the video</figcaption>
+    </figure>
+    </div>
+
+    <p style="margin-top: 36px;">
+        This is the final code from today's class that I ended up with.  It was overwhelming to learn an entirely new language at<br>
+        such a fast pace, but one thing I realised from p5.js is how much more straightforward the instructions are compared to<br>
+        HTML and CSS. While HTML and CSS had many new terms, p5.js is easier as their terms are similar to Adobe, such as<br>
+        strokeWeight, line and createCanvas.
+        <br><br>
+        My main challenge when it came to p5.js would be the idea of frame rates. As someone who finds animation difficult,<br>
+        it is hard to wrap my head around the idea of frame rates. As we worked with varying the number of frame rates and<br>
+        depending on where we used it, it help me to better understand what exactly it did. I went through quite a few trials<br>
+        and errors before getting the frame rate that I felt best suited my design.
+    </p>
+
+
+        <pre><code>
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                background(255, 155, 180);
+                frameRate(5);
+                  }
+                  
+            function draw() {
+                //stroke(255);
+                background(0, 255, 0);
+                noStroke();
+                fill(mouseX, mouseX-255, mouseX-510);
+                //circle(mouseX, mouseY, 10);
+                //circle(width/2, height/2, 300);
+                //circle(0.3*width, 0.8*height, 200);
+                //ellipse(0.75*width, 400, 100, 300);
+                strokeWeight(10);
+                stroke(0);
+                line(pmouseX, pmouseY, mouseX, mouseY);
+                    }
+            </code></pre>
+        <figure style="display: block;">
+            <video width="900px" height="auto" controls muted style="display: block; margin: 0 auto;">
+                <source src="data/images/Week3/Week3_5.mp4" alt="Week 3_5" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <figcaption class="caption" style="text-align: left; width: 900px; margin: 10px auto 0;">Caption for the video</figcaption>
+    </figure>
+
+    <h2 style="margin-top: 24px;">
+        Making a Face
+    </h2>
+
+    <div class="element1">
+    <div>
+    <p>
+        We were tasked to create a self-portrait of ourselves using simple shapes for homework this week.<br>
+        As someone with a background in fine arts during high school, simplifying complicated images is<br>
+        difficult for me. Shading and providing natural details has always come more naturally to me than<br>
+        creating cartoon-like images. Even when transitioning into this degree, it was hard to understand<br>
+        vectors and shapes. Thus, this piece of homework was quite difficult.
+        <br><br>
+        We tried an activity similar to the machine instructions for our self-portrait. We hand-drew what our<br>
+        design might look like when converted to pixels. Of course, it ended up looking slightly different when<br>
+        I tried to recreate it on Processing. However, I still felt like it provided a good gauge of where to place<br>
+        the facial features, compared to if I had done it without a sketch.
+        <br><br>
+        There was not much information online on how to code a face, and if there was, I didn't feel that it<br>
+        suited my design aesthetics. Finally, I managed to find a designer's works that I liked. She made use of<br>
+        unique simple shapes that I would not have otherwise thought of, such as diamonds for the eyes and<br>
+        large blocks of solid colours to frame the character's hair. While it seems rather simple upon first glance,<br>
+        after understanding how much goes on when doing this from scratch with JS, I thought her code would<br>
+        be good to reference for my work.
+    </p>
+
+    <pre style="margin-top:36px; width: 50vw;"><code>
+        let darkBrown
+        let lightYellow
+    
+    
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(255, 255, 255);
+            darkBrown = color(71, 13, 0)
+            lightYellow = color(255, 349, 196);
+            }
+    
+        function draw() {
+            //reference: https://ems.andrew.cmu.edu/2018_60212f/category/02/ (possible ideas)
+            //rect(x1, y1, w, h, corners)
+            //ellipse(cx, cy, w, h)
+            //arc(cx, cy, w, h,)
+            
+        push();
+            rectMode(CENTER);
+    
+            // back hair
+            fill (darkBrown);
+            strokeWeight(0);
+            rect(width/2, height/2, 230, 400, 90);
+    
+            //face
+            fill (lightYellow);
+            strokeWeight(0);
+            ellipse (width/2, height/2-60, 200, 200);
+      
+            //bangs
+            fill (darkBrown);
+            arc(width/2, height/2-60, 230, 200, PI, TWO_PI);
+      
+            //left eye
+            fill (darkBrown);
+            strokeWeight(0);
+            ellipse (width/2-50, height/2-35, 10, 10);
+      
+            //right eye
+            fill (darkBrown);
+            strokeWeight(0);
+            ellipse (width/2+50, height/2-35, 10, 10);
+        pop();
+      
+        push();
+            //left eyebrow
+            noFill();
+            translate(-7.5, -5);
+            strokeWeight(2);
+            stroke (darkBrown);
+            bezier(width/2-50, height/2-35, width/2-45, height/2-40, width/2-40, height/2-40, width/2-35, height/2-35);
+            //bezier(400, 400, 410, 390, 420, 390, 430, 400); not responsive
+            //(x1, y1, x2, y2, x3, y3, x4, y4)
+        pop();
+      
+        push();
+            //right eyebrow
+            noFill();
+            translate(93, -5);
+            strokeWeight(2);
+            stroke (darkBrown);
+            bezier(width/2-50, height/2-35, width/2-45, height/2-40, width/2-40, height/2-40, width/2-35, height/2-35);
+        pop();
+      
+        push();
+            //smile
+            noFill();
+            strokeWeight(2);
+            stroke(darkBrown);
+            translate(-20, 0);
+            bezier(width/2, height/2, width/2+10, height/2+10, width/2+30, height/2+10, width/2+40, height/2);
+        }
+    
+        function windowResized(){
+            resizeCanvas(windowWidth, windowHeight)}
+        </code></pre>
+        </div>
+
+    <div>
+    <figure>
+        <img src="data/images/Week3/Week3_6.JPG" alt="Week 3_6" style="width: 40vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+
+    <figure style="margin-top: 24px;">
+        <img src="data/images/Week3/Week3_7.gif" alt="Week 3_7" style="width: 40vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+    <figure style="margin-top:24px;">
+        <img src="data/images/Week3/Week3_8.jpg" alt="Week 3_7" style="width: 40vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+
+    </div>
+
+    </div>
+
+    <figure style="margin-left: 36px;">
+        <img src="data/images/Week3/Week3_9.png" alt="Week 3_7" style="width: 90vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+
+    <br><br>
+    <footer>
+        <p>testtt</p>
+    </footer>
+</body>
+</html>
