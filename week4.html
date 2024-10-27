@@ -39,59 +39,152 @@
             <figcaption class="caption" style="text-align: left; width: 900px; margin: 10px auto 0;">Caption for the video</figcaption>
         </figure>
 
-        <pre style="width: 45vw"><code>
-            var SIZE;
-var xPos, yPos;
+        <pre style="width: 45vw; margin-bottom: 24px;"><code>
+          var SIZE;
+          var xPos, yPos;
 
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(0);
-  textAlign(CENTER, CENTER);
-   //centered horizontally and baselined
-  SIZE=80;
-  xPos=width/2
-  yPos=height/2;
-  frameRate(5);
-  angleMode(DEGREES);
-}
+          function setup() {
+            createCanvas(windowWidth, windowHeight);
+            background(0);
+            textAlign(CENTER, CENTER);
+            //centered horizontally and baselined
+            SIZE=80;
+            xPos=width/2
+            yPos=height/2;
+            frameRate(5);
+            angleMode(DEGREES);}
 
 
-function draw() {
-  background(0, 25); 
-  //background (0) refreshes the frame so that it doesn't overlap
-  //yPos=random(height);
-  //xPos=random(width);
-  //fill(255,0,0);
+          function draw() {
+            background(0, 25); 
+            //background (0) refreshes the frame so that it doesn't overlap
+            //yPos=random(height);
+            //xPos=random(width);
+            //fill(255,0,0);
   
-  if (mouseIsPressed === true){
-    fill(255);
-  }else{
-    fill(255, 0, 0);
-  }
+            if (mouseIsPressed === true){
+              fill(255);
+            }else{
+              fill(255, 0, 0);
+            }
   
-  textSize(SIZE);
-  push();
-  translate(width/2, height/2);
-  noStroke();
-    //rotate(QUARTER_PI);
-    //also can write PI/4
-    rotate(mouseX);
-    text('HELLO WORLDDDD\nthis is the end... ', -width/4, -height/4, width/2, height/2);
-    //first two variables are position, second two are size
-    pop();
-    stroke(255, 0, 0);
-    strokeWeight(5);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-}
+          textSize(SIZE);
+            push();
+              translate(width/2, height/2);
+              noStroke();
+              //rotate(QUARTER_PI);
+              //also can write PI/4
+              rotate(mouseX);
+              text('HELLO WORLDDDD\nthis is the end... ', -width/4, -height/4, width/2, height/2);
+              //first two variables are position, second two are size
+            pop();
+            stroke(255, 0, 0);
+            strokeWeight(5);
+            line(mouseX, mouseY, pmouseX, pmouseY);
+            }
 
-function mousePressed(){
-  //SIZE++; OR
-  SIZE+=10;
-}
+          function mousePressed(){
+            //SIZE++; OR
+            SIZE+=10;
+            }
         </code></pre>
+    </div>
 
+   
+    <p style="margin-top:36px;">
+      In the second half of class, we worked with more complicated p5.js commands.
+      <br><br>
+      We had previously learnt how to place images into a HTML file, but today we were taught another way through p5.js,<br>
+      where we directly dragged it into the screen of Processing. 
+      <br><br>
+      Today's “Hour of Code” was extremely overwhelming, as there was a lot of math and new concepts involved.<br>
+      We learnt about using angles, Boolean systems and conditional statements, as seen in the following code.<br>
+      While it was difficult, it opened up more ideas for Brief 1, as what I could previously think of doing was very limited.
+    </p>
+
+    <figure style="display: block; margin-top:36px;">
+      <video width="96.5%" height="auto" controls muted style="display: block; margin: 0 auto;">
+          <source src="data/images/Week4/Week4_3.mp4" alt="Week 4_3" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      <figcaption class="caption" style="text-align: left; width: 96.5%; margin: 10px auto 0;">Caption for the video</figcaption>
+  </figure>
+
+
+  <h2 style="margin-top:24px;">Sketches</h2>
+
+  <p>
+    One source of inspiration that I have constantly been referencing during my ideation would be the Reading Machines website. It is easy to jump to using images and complicated graphics when coming up with a website design, as I rarely see websites without photographs or videos in today’s day and age. Thus, it was helpful to reference a website where everything was entirely text-based, as well as poetry-based.
+
+One design that I was especially inspired by was “Glossary of Feelings” by Jorge Palacios. The idea of clicking and dragging individual text trapped within a rectangle was such a simple idea, yet did not occur to me. I thought it might be an interesting element to split up the sentence I am using, or even to highlight certain keywords. Another design I was inspired by would be Angelo Plessas’ “Everything Happens As It Should” from last week. The concept of a changing background colour with each user interaction might be something I want to try.
+
+  </p>
+
+  <div class="element1" style="margin-top: 36px;">
+    <figure>
+      <img src="data/images/Week4/Week4_4.png" alt="Week 4_4" style="width: 20vw; height: auto;">
+      <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+  </figure>
+
+  <figure>
+    <img src="data/images/Week4/Week4_5.png" alt="Week 4_5" style="width: 20vw; height: auto;">
+    <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+  </figure>
+
+<p style="width: 60vw;">
+  Initial Ideas for my chosen sentence (1 to 4)
+
+1. Sentence decreases in size and by a word everytime the left key is pressed, while it increases again and adds a word whenever the right key is pressed. The purpose was to mimic the deleting and retyping we do whenever we are texting someone.
+2. Each time “ENTER” is pressed, the next word in the sentence is randomly added to anywhere on the screen, while the opposite happens when “BACKSPACE” is pressed.
+3. “THINK” and “FEEL” will be blocked out with a black and  pink rectangle respectively. Viewers have to swipe the stack of rectangles as though they are pieces of paper, to unveil the final sentence at the bottom of it. This was heavily inspired by Palacios’ “Glossary of Feelings”.
+4. Viewers have to choose whether they want to delete the word “THINK” or “FEEL”. The background and text will correspond to whichever option they choose, with “THINK” producing a more neutral background, and “FEEL” a more pink background.
+
+I shared my ideas with Candice to get some feedback from my peers. She suggested combining 2 or more ideas together. This idea did cross my mind, as I felt that it would create a more cohesive interaction, but was not sure if that would be too difficult to code or put into a paper prototype. Thus, I decided to try combining them in mini paper prototypes, to see if they were plausible.
+</p>
 
     </div>
+
+<h2 style="margin-top:24px;">
+  Mini Prototoypes
+</h2>
+
+<div class="element1">
+  <p>
+    1. The screen starts out with just the first word, with each next word multiplying itself and increasing the tint of the background, until eventually the screen is hot pink and filled with repetitions of the sentence.
+2. Each time a word, “THINK” or “FEEL” is clicked, the word disappears until only one type of word is left. The background will also switch according the majority text left, with a pink background for “FEEL” and white one for “THINK”, before revealing the final sentence. 
+
+I chose to do the second idea for my final prototype as it was more interactive compared to the first one. It might be a little harder to code but I want to challenge myself.
+  </p>
+
+  <figure>
+    <img src="data/images/Week4/Week4_6.JPG" alt="Week 4_6" style="width: 20vw; height: auto;">
+    <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+  </figure>
+
+  <figure style="display: block;">
+    <video width="400px" height="auto" controls muted style="display: block; margin: 0 auto;">
+        <source src="data/images/Week4/Week4_7.mp4" alt="Week 4_2" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <figcaption class="caption" style="text-align: left; width: 400px; margin: 10px auto 0;">Caption for the video</figcaption>
+</figure>
+</div>
+
+<h2 style="margin-top:36px;">
+  Final Prototype
+</h2>
+
+<div class="element1" style="margin-top: 36px;">
+  <figure>
+    <img src="data/images/Week4/Week4_8.gif" alt="Week 4_8" style="width: 20vw; height: auto;">
+    <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+  </figure>
+
+  <p>
+    For the final prototype, I connected fishing wire to each word, so that I could easily remove it when interacted with. The cling wrap provided a separating layer so that the words would not change position whenever the background was being moved. However, for the final code, there will not be such a reflective layer and is purely for prototyping purposes.
+  </p>
+</div>
+
 
 
 <footer>
