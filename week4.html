@@ -10,7 +10,7 @@
 
     <h1>Week 4</h1> 
 
-    <h2>Choice of Text</h2>
+    <h2 style="margin-top: -36px;">Choice of Text</h2>
     
     <div class="element1">
     <p style="width:900px;">
@@ -18,7 +18,7 @@
         
         After some research, I landed on the book “Search History” by local Melburnian author, Amy Taylor. If one based entirely off the summary of the book, it would not really relate well to the theme of digital media, as it is mainly about a woman’s retroactive jealousy with her current boyfriend’s dead girlfriend. However, I found it interesting how her unhealthy habits were exacerbated by digital media, something I feel that many people can relate to, even if it might be different varieties of habits.
 
-        I eventually landed on the sentence, “She paused and then deleted "<em>think</em>"" replacing it with "<em>feel</em>”. I was contemplating between this and another sentence in the book where the speaker was unhealthily comparing herself to her partner’s ex due to her incessant stalking. However, I felt that this sentence relates to a wider variety of audience, both male and female. In today’s age where texting is such a large part of everyone’s lives, everyone has come to place overtly fixed connotations on various words, leading to unnecessary stressing when texting others. So much meaning has been placed onto small aspects such as using a full stop or capital letters, leaving someone on delivered or replying immediately, that it pushes one to question; why has this become the new norm?
+        I eventually landed on the sentence, “She paused and then deleted "<em>think</em>"" replacing it with "<em>feel</em>”. I was contemplating between this and another sentence in the book where the speaker was unhealthily comparing herself to her partner’s ex due to her incessant stalking. However, I felt that this sentence relates to a wider variety of audience, both male and female. In today’s age where texting is such a large part of everyone's lives, everyone has come to place overtly fixed connotations on various words, leading to unnecessary stressing when texting others. So much meaning has been placed onto small aspects such as using a full stop or capital letters, leaving someone on delivered or replying immediately, that it pushes one to question; why has this become the new norm?
     </p>
 
     <figure>
@@ -57,10 +57,8 @@
 
           function draw() {
             background(0, 25); 
-            //background (0) refreshes the frame so that it doesn't overlap
-            //yPos=random(height);
-            //xPos=random(width);
-            //fill(255,0,0);
+            //background (0) refreshes the frame
+              so that it doesn't overlap
   
             if (mouseIsPressed === true){
               fill(255);
@@ -72,11 +70,12 @@
             push();
               translate(width/2, height/2);
               noStroke();
-              //rotate(QUARTER_PI);
-              //also can write PI/4
               rotate(mouseX);
-              text('HELLO WORLDDDD\nthis is the end... ', -width/4, -height/4, width/2, height/2);
-              //first two variables are position, second two are size
+              text('HELLO WORLDDDD\n
+                this is the end... ', -width/4,
+                  -height/4, width/2, height/2);
+              //first two variables are position,
+              second two are size
             pop();
             stroke(255, 0, 0);
             strokeWeight(5);
@@ -84,7 +83,6 @@
             }
 
           function mousePressed(){
-            //SIZE++; OR
             SIZE+=10;
             }
         </code></pre>
@@ -113,10 +111,10 @@
 
   <h2 style="margin-top:24px;">Sketches</h2>
 
-  <p>
-    One source of inspiration that I have constantly been referencing during my ideation would be the Reading Machines website. It is easy to jump to using images and complicated graphics when coming up with a website design, as I rarely see websites without photographs or videos in today’s day and age. Thus, it was helpful to reference a website where everything was entirely text-based, as well as poetry-based.
-
-One design that I was especially inspired by was “Glossary of Feelings” by Jorge Palacios. The idea of clicking and dragging individual text trapped within a rectangle was such a simple idea, yet did not occur to me. I thought it might be an interesting element to split up the sentence I am using, or even to highlight certain keywords. Another design I was inspired by would be Angelo Plessas’ “Everything Happens As It Should” from last week. The concept of a changing background colour with each user interaction might be something I want to try.
+  <p style="margin-right:36px;">
+    One source of inspiration that I have constantly been referencing during my ideation would be the Reading Machines website. It is easy to jump to using images and complicated graphics when coming up with a website design, as I rarely see websites without photographs or videos in today's day and age. Thus, it was helpful to reference a website where everything was entirely text-based, as well as poetry-based.
+    <br><br>
+    One design that I was especially inspired by was “Glossary of Feelings” by Jorge Palacios. The idea of clicking and dragging individual text trapped within a rectangle was such a simple idea, yet did not occur to me. I thought it might be an interesting element to split up the sentence I am using, or even to highlight certain keywords. Another design I was inspired by would be Angelo Plessas' “Everything Happens As It Should” from last week. The concept of a changing background colour with each user interaction might be something I want to try.
 
   </p>
 
@@ -131,17 +129,14 @@ One design that I was especially inspired by was “Glossary of Feelings” by J
     <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
   </figure>
 
-<p style="width: 60vw;">
-  Initial Ideas for my chosen sentence (1 to 4)
 
-1. Sentence decreases in size and by a word everytime the left key is pressed, while it increases again and adds a word whenever the right key is pressed. The purpose was to mimic the deleting and retyping we do whenever we are texting someone.
-2. Each time “ENTER” is pressed, the next word in the sentence is randomly added to anywhere on the screen, while the opposite happens when “BACKSPACE” is pressed.
-3. “THINK” and “FEEL” will be blocked out with a black and  pink rectangle respectively. Viewers have to swipe the stack of rectangles as though they are pieces of paper, to unveil the final sentence at the bottom of it. This was heavily inspired by Palacios’ “Glossary of Feelings”.
-4. Viewers have to choose whether they want to delete the word “THINK” or “FEEL”. The background and text will correspond to whichever option they choose, with “THINK” producing a more neutral background, and “FEEL” a more pink background.
-
-I shared my ideas with Candice to get some feedback from my peers. She suggested combining 2 or more ideas together. This idea did cross my mind, as I felt that it would create a more cohesive interaction, but was not sure if that would be too difficult to code or put into a paper prototype. Thus, I decided to try combining them in mini paper prototypes, to see if they were plausible.
-</p>
-
+  <ol>
+    <li>Sentence decreases in size and by a word everytime the left key is pressed, while it increases again and adds a word whenever the right key is pressed. The purpose was
+        <br>to mimic the deleting and retyping we do whenever we are texting someone.</li>
+    <li>Each time “ENTER” is pressed, the next word in the sentence is randomly added to anywhere on the screen, while the opposite happens when “BACKSPACE” is pressed.</li>
+    <li>“THINK” and “FEEL” will be blocked out with a black and  pink rectangle respectively. Viewers have to swipe the stack of rectangles as though they are pieces of paper, to unveil the final sentence at the bottom of it. This was heavily inspired by Palacios' “Glossary of Feelings”.</li>
+    <li>Viewers have to choose whether they want to delete the word “THINK” or “FEEL”. The background and text will correspond to whichever option they choose, with “THINK” producing a more neutral background, and “FEEL” a more pink background.</li>
+    </ol>
     </div>
 
 <h2 style="margin-top:24px;">
@@ -174,9 +169,9 @@ I chose to do the second idea for my final prototype as it was more interactive 
   Final Prototype
 </h2>
 
-<div class="element1" style="margin-top: 36px;">
+<div class="element1" style="margin-top: 12px;">
   <figure>
-    <img src="data/images/Week4/Week4_8.gif" alt="Week 4_8" style="width: 20vw; height: auto;">
+    <img src="data/images/Week4/Week4_8.gif" alt="Week 4_8" style="width: 42.5vw; height: auto;">
     <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
   </figure>
 

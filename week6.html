@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Week 6</h1> 
+
+    <h2 style="margin-top:-36px;">
+        Final Project Idea</h2>
+        <p style="margin-right: 36px;">
+        After the feedback for Brief 1, I proceeded to convert my paper prototype to code. Initially, I planned to separate the words think and feel into 2 documents, before combining them into one. However, after looking at others' examples, I realised it made more sense to combine them into one main document. I was rather overwhelmed looking at the examples I found as there were so many new functions I had never seen before all combined into a singular processing document. Not knowing where exactly to begin, I asked in the class' Milestone excel sheet for help. Karen Ann suggested “count[ing] the words by finding the 'length' of [the] string variable. E.g. if [I] have myString="Hello World";  the myString.length will be 2, then [I] can use this to change [my] colour either by accessing a colour from a list or changing the r, g, b values.” 
+        <br><br>
+        I referenced <a href="https://p5js.org/reference/p5/char/#:~:text=char()%20converts%20numbers%20to,single-character%20string%20is%20returned" target="_blank">the p5.js website</a> to try to understand what a string variable was, and used ChatGPT and Copilot for one that was applicable to my idea. While I have not adjusted the position of each word, the code worked to a certain extent where I could make each word disappear each time I clicked it. However, the background would not change according to the majority text, likely due to a  missing command in my current code.
+    </p>
+
+    <br>
+
+    <figure style="margin-left:36px; margin-right: 36px;">
+        <img src="data/images/Week6/Week6_1.png" alt="Week 6_1" style="width: 99%; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+   
+    <pre style="margin-left: 36px; margin-right: 36px; margin-top: 24px;"><code>
+    let dogicaPixel, SFPro;
+    let pink, white, black;
+    let words = [];
+
+    function preload(){
+    dogicaPixel = loadFont('/data/dogicapixel.ttf');
+    SFPro = loadFont('/data/SF-Pro.ttf');}
+
+    function setup() {
+    createCanvas(windowWidth, windowHeight);
+    isFontReady = true;
+    pink = color(255, 225, 244);
+    white = color(255)
+    black = color(0);
+
+    words = [
+        { text: 'think', x: 150, y: 250, font: dogicaPixel },
+        { text: 'think', x: 300, y: 300, font: dogicaPixel },
+        { text: 'think', x: 450, y: 350, font: dogicaPixel },
+        { text: 'think', x: 600, y: 400, font: dogicaPixel },
+        { text: 'think', x: 750, y: 450, font: dogicaPixel },
+        { text: 'feel', x: 150, y: 500, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 300, y: 550, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 450, y: 600, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 600, y: 650, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 750, y: 700, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 900, y: 750, font: 'sloop-script-one, sans-serif' }
+    ];
+    }
+
+
+    function draw() {
+
+        // Count the number of "think" and "feel" words
+        let thinkCount = words.filter(word => word.text === 'think').length;
+        let feelCount = words.filter(word => word.text === 'feel').length;
+    
+        // Change background color based on majority word
+        if (thinkCount > feelCount) {
+        background(white);
+        } else {
+        background(pink);
+        }
+
+    words.forEach(word => {
+        push();
+        textFont(word.font);
+        textSize(24);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text(word.text, word.x, word.y);
+        pop();
+    });
+
+    push();
+        rectMode(CENTER);
+        textFont(SFPro);
+        textSize(95);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('CHOOSE', width/2, 100);
+    pop();
+
+    push();
+        rectMode(CENTER);
+        textFont(SFPro);
+        textSize(21);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('CLICK TO REMOVE THE WORD YOU WOULD NOT USE IN A TEXT', width/2, 200);
+    pop();
+
+    push();
+        rectMode(CENTER);
+        textFont(dogicaPixel);
+        textSize(24);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('think', 150, 250);
+    pop();
+
+    push();
+        textFont("sloop-script-one, sans-serif");
+        textSize(36);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text("feel!", 300, 250);
+    pop();
+
+    function mousePressed() {
+        // Check if a word is clicked and remove it
+        for (let i = words.length - 1; i >= 0; i--) {
+        let word = words[i];
+        let d = dist(mouseX, mouseY, word.x, word.y);
+        if (d < 50) { // Adjust the radius as needed
+            words.splice(i, 1);
+            break;
+        }
+        }
+    }
+    
+    }
+     </code></pre>
+     
+    </div>
+
+    <h2 style="margin-top:24px;">
+        Arrays</h2>
+
+    <div class="element1">
+        <div style="width: 45vw;">
+            <figure>
+                <img src="data/images/Week6/Week6_2.png" alt="Week 6_2" style="width: 45vw; height: auto;">
+                <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+            </figure>
+            <br>
+            <figure>
+                <img src="data/images/Week6/Week 6_3.JPG" alt="Week 6_3" style="width: 45vw; height: auto;">
+                <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+            </figure>
+            <br>
+            <p>
+                In class, we went through someone's question on how to create columns for our SKO. I could not really keep up in class so I asked my friend Brian for help afterwards. The most straightforward manner to do it was through HTML, but I also wanted to learn how to do it through p5.js. Thus, he made use of ChatGPT to generate a basic nested loop structure and explained how to execute it in the context of p5.js. If I did not try using loops in this grid structure trial, I would still be extremely confused on what exactly a loop is. If I had not used a loop, I might still be manually adjusting the position of my images.
+            </p>
+
+        </div>
+
+        <pre style="width: 45vw;"><code>
+        // cred: chatgpt
+        // Intialise variables
+        let images = [];  // Declare the array to hold images
+        let imgSize = 200;  // Size of each image
+        let cols, rows;
+        let gridHeight, gridWidth;
+        let startX, startY;
+
+        // Add pictures to image array
+        function preload() {
+            // Load images directly into the array in one line
+            images = [
+            loadImage('data/1_giraffe.jpg'),
+            loadImage('data/2_starfish.jpg'),
+            loadImage('data/3_fluffy_octo.jpg'),
+            loadImage('data/4_angry_frog.jpg'),
+            loadImage('data/5_angry_turtle.jpg'),
+            loadImage('data/6_aubergine.jpg'),
+            loadImage('data/7_sheepie.jpg'),
+            loadImage('data/8_brontosaurus.jpg'),
+            loadImage('data/9_octo.jpg')
+            ];
+        }
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            cols = 3;  // Number of columns in the grid
+            rows = 3;  // Number of rows in the grid
+  
+            gridWidth = cols * imgSize;
+            gridHeight = rows * imgSize;
+  
+            startX = (width - gridWidth) / 2;
+            startY = (height - gridHeight) / 2;
+        }
+
+        function draw() {
+        background(255);
+        imageMode(CORNER);
+        let index = 0;
+
+        // Nested loops to display the images in a grid
+        for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+            if (index < images.length) {
+                let img = images[index];
+                let x = startX + col * imgSize;
+                let y = startY + row * imgSize;
+
+                // Calculate proportional size to maintain aspect ratio
+                let aspectRatio = img.width / img.height;
+                let w, h;
+                
+                if (aspectRatio > 1) {  // Landscape image (wider than tall)
+                w = imgSize;
+                h = imgSize / aspectRatio;
+                } else {  // Portrait image (taller than wide) or square
+                h = imgSize;
+                w = imgSize * aspectRatio;
+                }
+
+                // Center the image within the grid cell
+                let xOffset = (imgSize - w) / 2;
+                let yOffset = (imgSize - h) / 2;
+
+                // Draw the image at the centered position
+                image(img, x + xOffset, y + yOffset, w, h);
+                index++;
+            }
+            }
+        }
+        }   
+        </pre></code>
+</div>
+
+        
+<footer>
+   <p>hello testing</p>
+</footer>
+</body>
+</html>
