@@ -5,4 +5,83 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Week 12</h1> 
+    <div class="element2">
+        <h1>Week 12</h1>
+        <p2 style="margin-top:48px; margin-right: 24px;">
+        
+            <a href="index.html" style="color:black; text-decoration: none;">4</a></p2>
+        </div>
+    
+    
+    <h2 style="margin-top:-36px;">Clearing Glitches</h2>
+   
+
+    <div class="element1">
+        <div>
+            <p>
+            When I first connected feel.html to my main file, it would only run when multiple options were selected in a certain manner.<br>
+            I tried rearranging the order of glitches and placing in flags. However, the method that cleared the glitches entirely was to place a delay in clearGlitchesAndSwitch(). While it slows down the transition, it allows all the glitches on screen to be cleared and disabled entirely before loading the new html page.
+        </p>
+
+        <pre style="margin-top: 12px; width: 450px; height: 300px;"><code>
+            function clearGlitchesAndSwitch() {
+                clearGlitches();  // Clears glitches
+                setTimeout(() => {
+                    window.location.href = "feel.html";
+                }, 500);  // 500ms delay for glitch clearing
+            }   
+                </code></pre>
+    </div>
+   
+
+        <figure style="margin-top: 12px;">
+            <img src="data/images/Week12/Week12_1.png" alt="Week 12_1" style="width: 870px; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+    </div>
+    
+
+    
+
+    <h2 style="margin-top: 36px;">
+        Major Project
+    </h2>
+    
+    <p style="width: 50vw;">
+        One of the most important things I learn from this was how to set up a website, and not just how to create creative sketches. 
+
+        While I think it is interesting to learn how to create interesting designs, it is ultimately of no use if I cannot combine them into a website. Thus, asking Brian to teach me the logic that goes behind a webpage helped a lot when structuring my files.
+    </p>
+
+    <figure style="margin-top: 12px; margin-left: 36px;">
+        <img src="data/images/Week12/Week12_4.png" alt="Week 12_2" style="width: 50vw; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+
+   
+    <h2 style="margin-top: 36px;">
+        Setting up my SKO
+    </h2>
+
+    <div class="element1">
+        <p style="width: 50vw;">
+            When setting up this SKO, I was also quite confused on how to set up my file paths because there was so much more content compared to the main project, as well as it being mainly set in HTML. 
+
+Initially, I planned to each week's reflection in p5.js, as I was more familiar with it, having worked on it for the past few weeks. However, I quickly realised that it was more practical to do everything mainly in HTML, especially when my design changed to no longer involve as much animation as I originally planned.
+        </p>
+
+        <figure style="margin-top: 12px; margin-left: 36px;">
+            <img src="data/images/Week12/Week12_2.JPG" alt="Week 12_3" style="width: 40vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+
+    </div>
+
+    <p></p>
+
+
+    <footer>
+        <p style="text-align: center; margin-top: 24px;">&copy; Charlotte Cheng 2024</p>
+        </footer>
+    </body>
+    </html>
