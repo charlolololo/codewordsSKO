@@ -3,71 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 5</title>
+    <title>Week 7</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Week 5</h1> 
-    <p>
-        This was a presentation week where we shared all our paper prototypes with each other.
-    </p>
-
-    <h2 style="margin-top:24px;">
-        Sharing of Brief 1</h2>
+    <h1>Week 7</h1> 
     
+    <h2 style="margin-top:-36px;"> 
+    Redoing Brief 2
+    </h2>
+
     <p>
-        When sharing my paper prototype, the main challenge I faced was explaining my<br>
-        concept while moving my paper prototype. I could have improved this by explaining<br>
-        clearly in the beginning, but I did not realise that my peers were confused until we<br>
-        started carrying out the activity itself.
-        <br><br>
-        For the design itself I might have to include some written instructions if I wish to<br>
-        continue moving forward with this idea.
+    After creating our drafts from Week 6, we presented our ideas to our peers in class as well as Andy.
+    <br><br>
+    Here is the feedback I received from my peers:<br>
+    <p style="text-indent: 30px;">
+            - Maybe the difference in the 2 outcomes can be more obvious, such as through making use of text size etc.<br>
+            <p style="text-indent: 30px;">
+            - Could possibly make use of different fonts to show the connotations of “THINK” and “FEEL”<br>
+            <p style="text-indent: 30px;">
+            - The contrast between the font sizes could be more extreme, to create a stronger contrast between each answer<br>
+            <p style="text-indent: 30px;">
+            - Give the audience some instructions to let them know they need to eliminate a certain category of words</p>
     </p>
 
-    <br>
-        
-    <div class="element1">
 
-        <figure>
-            <img src="data/images/Week5/Week5_1.JPG" alt="Week 5_1" style="width: auto; height: 480px;">
-            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
-        </figure>
-        <figure>
-            <img src="data/images/Week5/Week5_2.jpeg" alt="Week 5_1" style="width: auto; height: 480px;">
-            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
-        </figure>
-
-        <figure>
-            <img src="data/images/Week5/Week5_3.JPG" alt="Week 5_1" style="width: auto; height: 480px;">
-            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
-        </figure>
-
-        </div>
-
-    <h2 style="margin-top:24px;">
-            SKO Ideation</h2>
-
-    <div class="element1">
-    <p>
-        This class was rather short as most was spent sharing our work and documenting it.<br>
-        We ended off class with a short Crazy Eight activity for our SKO's layout.
-        <br><br>
-        My ideas for my SKO were rather vague as I am not sure what exactly I can code.<br>
-        I did not want to give overtly ambitious ideas that I could not end up coding,<br>
-        though I knew I should not be limiting myself during the Crazy Eight stage.<br>
-        This led to some rather boring ideas which I do not think I will end up using.
-    </p>
-
-    <figure>
-        <img src="data/images/Week5/Week5_4.JPG" alt="Week 5_4" style="width: 49vw; height: auto;">
+    
+    <figure style="margin-left:36px; margin-right: 36px; margin-top: 36px;">
+        <img src="data/images/Week6/Week6_1.png" alt="Week 7_1" style="width: 99%; height: auto;">
         <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
     </figure>
+   
+    <pre style="margin-left: 36px; margin-right: 36px; margin-top: 24px;"><code>
+    let dogicaPixel, SFPro;
+    let pink, white, black;
+    let words = [];
 
-    </div>  
+    function preload(){
+    dogicaPixel = loadFont('/data/dogicapixel.ttf');
+    SFPro = loadFont('/data/SF-Pro.ttf');}
 
-       
- 
+    function setup() {
+    createCanvas(windowWidth, windowHeight);
+    isFontReady = true;
+    pink = color(255, 225, 244);
+    white = color(255)
+    black = color(0);
+
+    words = [
+        { text: 'think', x: 150, y: 250, font: dogicaPixel },
+        { text: 'think', x: 300, y: 300, font: dogicaPixel },
+        { text: 'think', x: 450, y: 350, font: dogicaPixel },
+        { text: 'think', x: 600, y: 400, font: dogicaPixel },
+        { text: 'think', x: 750, y: 450, font: dogicaPixel },
+        { text: 'feel', x: 150, y: 500, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 300, y: 550, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 450, y: 600, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 600, y: 650, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 750, y: 700, font: 'sloop-script-one, sans-serif' },
+        { text: 'feel', x: 900, y: 750, font: 'sloop-script-one, sans-serif' }
+    ];
+    }
+
+
+    function draw() {
+
+        // Count the number of "think" and "feel" words
+        let thinkCount = words.filter(word => word.text === 'think').length;
+        let feelCount = words.filter(word => word.text === 'feel').length;
+    
+        // Change background color based on majority word
+        if (thinkCount > feelCount) {
+        background(white);
+        } else {
+        background(pink);
+        }
+
+    words.forEach(word => {
+        push();
+        textFont(word.font);
+        textSize(24);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text(word.text, word.x, word.y);
+        pop();
+    });
+
+    push();
+        rectMode(CENTER);
+        textFont(SFPro);
+        textSize(95);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('CHOOSE', width/2, 100);
+    pop();
+
+    push();
+        rectMode(CENTER);
+        textFont(SFPro);
+        textSize(21);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('CLICK TO REMOVE THE WORD YOU WOULD NOT USE IN A TEXT', width/2, 200);
+    pop();
+
+    push();
+        rectMode(CENTER);
+        textFont(dogicaPixel);
+        textSize(24);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text('think', 150, 250);
+    pop();
+
+    push();
+        textFont("sloop-script-one, sans-serif");
+        textSize(36);
+        fill(black);
+        textAlign(CENTER, CENTER);
+        text("feel!", 300, 250);
+    pop();
+
+    function mousePressed() {
+        // Check if a word is clicked and remove it
+        for (let i = words.length - 1; i >= 0; i--) {
+        let word = words[i];
+        let d = dist(mouseX, mouseY, word.x, word.y);
+        if (d < 50) { // Adjust the radius as needed
+            words.splice(i, 1);
+            break;
+        }
+        }
+    }
+    
+    }
+     </code></pre>
+     <p style="margin-top:36px; margin-right: 36px;">
+        However, after consulting with Andy, I realised I would have to come up with a whole new idea. The idea I previously proposed might have been good enough for Brief 1 and as an initial paper prototype, but it did not evoke as much anxiety as I would like it to have, according to Andy. He suggested that I could create a dropdown box, to mimic a form of sorts, and have viewers pick the right answer. Each time they chose something, it could trigger a glitch of sorts. This was rather stressful as I was unsure if I would be able to think of a new concept and finish coding it well in 6 weeks. Despite this, I still decided to change my idea as I agree that my idea was not overwhelming enough, and ultimately would not be able to evoke the emotions<br>I want to in my viewers.
+     </p>
+
+    <h2 style="margin-top:36px;">
+        SKO
+    </h2>
+    <p>
+        We also presented our SKO ideas in class with the rest of the class. I proposed two ideas: a claw machine, and catching circles.
+    </p>
+
+    <figure style="margin-left:36px; margin-right: 36px; margin-top: 36px;">
+        <img src="data/images/Week7/Week7_1.JPG" alt="Week 7_1" style="width: 68%; height: auto;">
+        <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+    </figure>
+    <br>
+
+    <div class="element1">
+        <div>
+        
+        <p>
+            For my first idea, I was inspired by a <a href="https://www.xiaohongshu.com/discovery/item/656b40630000000009025797?source=webshare&xhsshare=pc_web&xsec_token=ABzdvfwQfdSXXY6GFOm-wlxZzNzhGPSgkHN56RT68qZFA&xsec_source=pc_share" target="_blank">Chinese Designer</a> on Xiaohongshu. In this code, the audience would have to use their hands<br>to grab the characters in the claw machine manually.
+My plan for this idea is to use the claw as the cursor, and viewers would have to grab one of the 12 different 3D characters to access each week's reflection.
+
+
+
+My second idea is based off the portfolio I made for my internship applications using Readymag. Viewers would have to chase after the individual elements on the screen, similar to my Readymag website, in order to access each page.
+
+After sharing with the class, I decided to go with the first idea as Karen Ann was enthusiastic about the idea of a claw machine. I personally also felt that it was a stronger original idea than the second one, as I have never done this before. After some research, I saw people using Three.JS and React to create 3D websites, thus I might explore that in my own time to see how I can combine it with the languages and libraries I have learn so far.
+<br><br>
+After class, I downloaded the React library with my friend Brian's help. I was confused about the whole concept of libraries,<br>
+still being under the impression that React was a completely different language from P5, even though both of them fall under<br>
+the category of Javascript. I have no been able to explore React with 3D elements yet, as I have not created any for my SKO.
+        </p>
+        <br>
+        <figure style="display: block;">
+            <video width="950px" height="auto" controls muted style="display: block; margin: 0 auto;">
+                <source src="data/images/Week7/Week7_3.mp4" alt="Week 7_3" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption class="caption" style="text-align: left; width: 950px; margin: 10px auto 0;">Caption for the video</figcaption>
+        </figure>
+        </div>
+        
+        <figure style="display: block;">
+            <video width="400px" height="auto" controls muted style="display: block; margin: 0 auto;">
+                <source src="data/images/Week7/Week7_2.mp4" alt="Week 7_2" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption class="caption" style="text-align: left; width: 400px; margin: 10px auto 0;">Caption for the video</figcaption>
+        </figure>
+
+    </div>
+
 <footer>
    <p>hello testing</p>
 </footer>

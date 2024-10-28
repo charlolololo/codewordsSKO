@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Week 8</h1> 
+
+    <h2 style="margin-top:-36px;">Adding Sound in p5.js</h2>
+
+    <p style="margin-right:36px;">
+        Today's class focused on adding sound to our files in p5.js as someone brought it up. I thought it was interesting to learn how to add music, as I might want to use it for some of the glitches<br>
+        in my final project, even though I have not gotten that far yet. Two key points to note when adding sound would be to add the p5 sound library into the folder, as well as suspend and resume audio context, a necessary function to get audio usage from browsers.
+        <br><br>
+        <a href="https://github.com/charlolololo/CodewordsWeek8Sound" target="_blank">Click Here to Access the Repository</a>
+    </p>
+    <br><br>
+    
+    <figure style="display: block;">
+        <video width="950px" height="auto" controls muted style="display: block; margin: 0 auto;">
+            <source src="data/images/Week8/Week8_1.mp4" alt="Week 8_1" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figcaption class="caption" style="text-align: left; width: 950px; margin: 10px auto 0;">Caption for the video</figcaption>
+    </figure>
+
+    <pre style="margin-left: 36px; margin-right:36px; margin-top: 36px;"><code>
+        var song, mic, speed, volume;
+        function preload() {
+        song=loadSound("data/Lovely_Piano_Song.mp3")
+        }
+
+        function setup() {
+        createCanvas(windowWidth, windowHeight);
+        background(255, 255, 0);
+        getAudioContext().suspend();
+        // to give permission
+        mic = new p5.AudioIn();
+        mic.start();
+        
+        }
+
+
+        function draw() {
+        background(255, 255, 0);
+        volume = mic.getLevel();
+        circleDiameter = map(volume, 0.0, 1.0, 50, 500);
+        //let circleDiameter = map (mouseY, 0, height/2, 1, 400);
+        circle(mouseX, mouseY, circleDiameter);
+        
+        //volume = map (mouseX, 0, width, 0.0, 1.0);
+        //speed = map (mouseX, 0, height, 0.01, 10);
+        //song.amp(volume);
+        //song.rate(speed);
+
+        }
+
+        function mousePressed() {
+        if (getAudioContext().state !=='running'){
+            getAudioContext().resume();
+            song.play();
+            song.loop();
+        }
+        
+        }
+
+        function keyTyped() {
+        if (key === " ") {
+        song.stop();}
+        //keyPressed = doesn't matter what you press
+        else {
+            song.play();
+        }
+        }
+    </code></pre>
+
+    <h2>Creating a Dropdown Box</h2>
+    <div class="element1">
+        <p>
+            After looking at examples online, it appeared that standard practice for creating dropdown boxes was to use HTML and CSS instead of Javascript. Thus, I tried working with HTML and CSS for the first time in a while, as I had spent the past few weeks trying out my project with p5.js. It was much easier to change aesthetics of the dropdown box to match exactly what I wanted it to look like, compared to Javascript. Thus, I might keep using HTML for the main page, and only Javascript for the interactivity and glitches.
+        </p>
+
+        <figure>
+            <img src="data/images/Week8/Week8_3.png" alt="Week 8_3" style="width: 50vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+    </div>
+
+    <h2>
+        Library Task
+    </h2>
+
+    <div class="element1">
+        <figure>
+            <img src="data/images/Week8/Week8_4.png" alt="Week 8_4" style="width: 30vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+
+        <figure>
+            <img src="data/images/Week8/Week8_5.png" alt="Week 8_5" style="width: 30vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+
+        <figure>
+            <img src="data/images/Week8/Week8_6.png" alt="Week 8_6" style="width: 30vw; height: auto;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+    </div>
+
+    <p style="margin-top:24px;">
+        In a world where digital media is so easily accessible, we were encouraged to look for physical pieces of media for inspiration, as ultimately there are things found in physical books that we might not necessarily find online. I went to the RMIT library to look for some sources of inspiration, and found two books: “Benzin: Young Swiss Graphic Design” and “China Design Now”. The coloured blocks and lines from “Benzin: Young Swiss Graphic Design” especially inspired me, as it looked similar to other sources of glitch art that I found online.
+    </p>
+
+
+
+        
+    <footer>
+        <p>hello testing</p>
+     </footer>
+     </body>
+     </html>
