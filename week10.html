@@ -3,13 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 9</title>
+    <title>Week 10</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Week 9</h1> 
+    <h1>Week 10</h1> 
 
-    <h2 style="margin-top:-36px;">Inspiration</h2>
+    <p>
+    After creating a few glitches, ranging from coloured rectangles to sounds and buttons, I tried combining multiple p5.js canvases together using the method provided in the Canvas modules. However, it would not be practical to do that same method if I had more than 2 canvases. As I plan to make an individual canvas for every single glitch, I would have at least 6 Javascript files for the glitches. Thus, I asked my friend Brian for tips on how I could possibly combine it in a more efficient way. 
+    </p>
+
+    <h2>Combining Glitches</h2>
+
+    <p>
+        Firstly, event handling was set up in a2_final.js to detect when option is selected.<br>
+        The selectOption() function checks the selected option and activates the corresponding glitch function.
+    <br>
+    <br>
+    </p>
+
+    <p>
+        Example: a2_final.js
+    </p>
+    <pre style="margin-left: 36px; margin-right: 36px; margin-top: 5px;"><code>
+        function selectOption() {
+            let selectedOption = dropdown.value();
+            switch (selectedOption) {
+                case 'believe':
+                    triggerGlitch1();   // Activates glitch1 from glitch1.js
+                    break;
+                case 'conclude':
+                    triggerGlitch2();   // Activates glitch2 from glitch2.js
+                    break;
+                // Other cases for additional glitches
+            }
+        }
+    </code></pre>
+    <br>
+    <br>
+    <p>
+        To allow the classes and functions to be accessed in the main a2_final.js file, they needed to be exposed<br>
+        globally using 'window'. I did not register that classes would apply to the file locally, and needed to be<br>
+        exposed if I wanted it in the main file. Thus, this was a big roadblock while completing the main project,<br>
+        as I could not get any of my classes to work from the main file.
+    <br>
+    <br>
+    </p>
+
+    <p>
+        Example: glitch1.js
+    </p>
+    <pre style="margin-left: 36px; margin-right: 36px; margin-top: 5px;"><code>
+        class RectangleGlitch {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                // Additional properties and methods for glitch effect
+            }
+        
+            display() {
+                // Logic to display the glitch effect
+            }
+        }
+        
+        let glitch1Active = false;
+        
+        function triggerGlitch1() {
+            frameRate(5);  // Slow down frame rate for visual effect
+            glitch1Active = true;
+        }
+        
+        function deactivateGlitch1() {
+            glitch1Active = false;
+            frameRate(60);  // Reset frame rate to default
+        }
+        
+        window.triggerGlitch1 = triggerGlitch1;
+        window.deactivateGlitch1 = deactivateGlitch1;
+    </code></pre>
+    <br><br>
+    <p>
+        Initially, I did not load my glitch files into 'index.html' as I thought that meant it would lead all them to
+        appear upon loading. However, I learnt that I could initialise them and stop them from running as long
+        as I added some separate functions in a2_final.js. After initialising all the files, I added clearGlitches(), clearGlitchesAndSwitch, updated draw() and
+    added flags. The flags help to maintain each glitch's state while the clearGlitches() function checks the
+    flags and deactivates each glitch when needed. The draw() function checks for the flags, ensuring that any active glitches are updated and displayed correctly. It loops through and updates any active glitch, ensuring they display together without interfering wiht each other. Thus, each glitch's visual effect is able to be managed independently in its own file but displayed on the shared canvas.    
+    <br><br>
+</p>
+
+    <div class="element1">
+        <div style="width: 45vw;">
+        <p>
+            Example: a2_final.js
+        </p>
+        <pre style="margin-top: 5px;"><code>
+            function selectOption() {
+                let selectedOption = dropdown.value();
+                switch (selectedOption) {
+                    case 'believe':
+                        triggerGlitch1();   // Activates glitch1 from glitch1.js
+                        break;
+                    case 'conclude':
+                        triggerGlitch2();   // Activates glitch2 from glitch2.js
+                        break;
+                    // Other cases for additional glitches
+                }
+            }
+        </code></pre>
+    </div>
+        <div style="width: 45vw;">
+        <p>
+            Example: a2_final.js
+        </p>
+        <pre style="margin-top: 5px;"><code>
+            function selectOption() {
+                let selectedOption = dropdown.value();
+                switch (selectedOption) {
+                    case 'believe':
+                        triggerGlitch1();   // Activates glitch1 from glitch1.js
+                        break;
+                    case 'conclude':
+                        triggerGlitch2();   // Activates glitch2 from glitch2.js
+                        break;
+                    // Other cases for additional glitches
+                }
+            }
+        </code></pre>
+    </div>
+    </div>
+    
+    <br><br>
+
+    <h2>More Glitches</h2>
+
+    <p style="margin-right: 36px;">
+        My initial plan was to create an original glitch for every single wrong word chosen. As of Week 10, my 3 glitches are: coloured rectangles, sound as well as buttons.
+        <br><br>
+The way I went about creating the buttons' glitch was similar to the coloured rectangles. After I created the button function, I made use of frame rates to appear across a time span.<br>
+To distinguish these glitches, I also adjusted the frame rate in a way that I felt would best suit each individual glitch.
+<br><br>
+For the sound glitch. I was initially confused as to why no sound was playing, and was struggling over it for a while. Eventually, I referred back to the modules and class notes I took during a few of the previous lessons. This was proof of why we should take notes when it comes to coding, as it is humanly possible to remember every single detail or function. Even when it comes to areas of design like Illustrator or Photoshop, there will be times where I need to refer back to the internet. Thus, it reinforced the good habit of keeping progress reports such as this SKO, as it will be a useful resource for ourselves to refer back to easily.
+    <br>
+    <br>
+    </p>
+
+    <div class="element1">
+        <figure>
+            <img src="data/images/Week10/Week10_1.jpeg" alt="Week 10_1" style="width: auto; height: 390px;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+
+        <figure>
+            <img src="data/images/Week10/Week10_2.png" alt="Week 10_1" style="width: auto; height: 390px;">
+            <figcaption class="caption">Winnie Soon, Unerasable Characters II, ACCA, 2023</figcaption>
+        </figure>
+
+    </div>
+    
+
 
     <footer>
         <p>hello testing</p>
