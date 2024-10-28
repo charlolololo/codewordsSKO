@@ -1,4 +1,4 @@
-# codewordsSKO
+# Codewords SKO
 
 When I first began this studio, I was worried about how I would manage coding to create aesthetically pleasing designs even though I have never been good at technology. However, it has proven to be a really fruitful learning experience. As I learn more about coding, it has opened horizons in design that I never thought I would be able to achieve, and I cannot wait to expand on my own personal creative coding projects.
 
